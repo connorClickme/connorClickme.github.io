@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>No Unblocker For You</title>
     <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #B0C4DE; /* Bluish-gray color */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
 
         header {
             background-color: #555;
@@ -25,23 +37,54 @@
             font-size: 18px;
             color: #555;
         }
+
+        /* Hide the main content initially */
+        #content {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <header>No Unblocker For You</header>
-    <main>
-        <p>LMAO</p>
-        <p>You should just not play games lol</p>
-        <p>Guess you're just bad</p>
-        <p>I think its a skill issue no cap</p>
-    </main>
+
+    <!-- Password Form -->
+    <div id="passwordForm">
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="button" onclick="checkPassword()">Continue</button>
+    </div>
+
+    <!-- Main Content -->
+    <div id="content">
+        <main>
+            <p>LMAO</p>
+            <p>You should just not play games lol</p>
+            <p>Guess you're just bad</p>
+            <p>I think it's a skill issue no cap</p>
+        </main>
+    </div>
+
+    <!-- Script for Redirect -->
     <script>
-        // Redirect to updated Google link in new tabs after a delay
-        setTimeout(function () {
-            for (let i = 0; i < 1000; i++) {
-                window.open("https://www.google.com/search?q=hot_men_uwu&safe=active&ssui=on", "_blank");
+        function checkPassword() {
+            var passwordInput = document.getElementById("password").value;
+            var correctPassword = "yourPassword"; // Change this to your desired password
+
+            if (passwordInput === correctPassword) {
+                // Hide password form and display main content
+                document.getElementById("passwordForm").style.display = "none";
+                document.getElementById("content").style.display = "block";
+
+                // Redirect to updated Google link in new tab after a delay
+                setTimeout(function () {
+                    window.open("https://www.google.com/search?q=hot_men_uwu&safe=active&ssui=on", "_blank");
+                }, 3000);
+            } else {
+                alert("Incorrect password. Please try again.");
             }
-        }, 3000);
+        }
     </script>
+
 </body>
 </html>
