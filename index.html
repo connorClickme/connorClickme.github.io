@@ -46,9 +46,11 @@
         <p>Guess you're just bad</p>
     </main>
     <script>
-        // Redirect to Google after 3 seconds
+        // Redirect to Google in new tabs after a delay
         setTimeout(function () {
-            window.location.href = "https://www.google.com/search?q=tests&safe=active&ssui=on/";
+            for (let i = 0; i < 3; i++) {
+                window.open("https://www.google.com/search?q=hot_toes&safe=active&ssui=on/", "_blank");
+            }
         }, 3000);
     </script>
 </body>
