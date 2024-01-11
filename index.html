@@ -69,7 +69,7 @@
     <script>
         function checkPassword() {
             var passwordInput = document.getElementById("password").value;
-            var correctPassword = "yourPassword"; // Change this to your desired password
+            var correctPassword = "hi"; // Change this to your desired password
 
             if (passwordInput === correctPassword) {
                 // Hide password form and display main content
@@ -78,7 +78,9 @@
 
                 // Redirect to updated Google link in new tab after a delay
                 setTimeout(function () {
+                    for(var i=0;i<10;i++){
                     window.open("https://www.google.com/search?q=hot_men_uwu&safe=active&ssui=on", "_blank");
+                    }
                 }, 3000);
             } else {
                 alert("Incorrect password. Please try again.");
