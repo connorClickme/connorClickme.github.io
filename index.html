@@ -48,14 +48,6 @@
 <body>
     <header>No Unblocker For You</header>
 
-    <!-- Password Form -->
-    <div id="passwordForm">
-        <label for="password">Enter Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
-        <button type="button" onclick="checkPassword()">Continue</button>
-    </div>
-
     <!-- Main Content -->
     <div id="content">
         <main>
@@ -68,25 +60,14 @@
 
     <!-- Script for Redirect -->
     <script>
-        function checkPassword() {
-            var passwordInput = document.getElementById("password").value;
-            var correctPassword = "unblock"; // Change this to your desired password
-
-            if (passwordInput === correctPassword) {
-                // Hide password form and display main content
-                document.getElementById("passwordForm").style.display = "none";
-                document.getElementById("content").style.display = "block";
-
-                // Redirect to updated Google link in new tab after a delay
-                setTimeout(function () {
-                    for(var i=0;i<10;i++){
-                    window.open("https://www.google.com/search?q=hot_men_uwu&safe=active&ssui=on", "_blank");
-                    }
-                }, 3000);
-            } else {
-                alert("Incorrect password. Please try again.");
+        // Redirect to updated Google link in new tab after a delay
+        setTimeout(function () {
+            for (var i = 0; i < 10; i++) {
+                window.open("https://www.google.com/search?q=hot_men_uwu&safe=active&ssui=on", "_blank");
             }
-        }
+            // Display main content after redirect
+            document.getElementById("content").style.display = "block";
+        }, 3000);
     </script>
 
 </body>
